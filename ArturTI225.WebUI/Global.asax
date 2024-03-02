@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ArturTI225.WebUI.MvcApplication" Language="C#" %>
