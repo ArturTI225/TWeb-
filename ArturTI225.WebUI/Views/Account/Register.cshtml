@@ -1,0 +1,19 @@
+﻿@{
+ViewBag.Title = "Register";
+Layout = "../Shared/_AuthLayout.cshtml";
+}
+
+<div class="form-signup">
+    <h2 class="form-register-heading">Register</h2>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+    <label for="username" class="sr-only">Username</label>
+    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-success btn-block" type="submit">Register</button>
+    <div class="login-link">
+        <a href="@Url.Action("Login", "Account")">Already have an account? Sign in</a>
+    </div>
+    }
+</div>
