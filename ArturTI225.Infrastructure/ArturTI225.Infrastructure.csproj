@@ -47,9 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarsShopContext.cs" />
-    <Compile Include="Migrations\202403272211525_Artur.cs" />
-    <Compile Include="Migrations\202403272211525_Artur.Designer.cs">
-      <DependentUpon>202403272211525_Artur.cs</DependentUpon>
+    <Compile Include="Migrations\202404151458017_initial.cs" />
+    <Compile Include="Migrations\202404151458017_initial.Designer.cs">
+      <DependentUpon>202404151458017_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404151526511_auth.cs" />
+    <Compile Include="Migrations\202404151526511_auth.Designer.cs">
+      <DependentUpon>202404151526511_auth.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,8 +69,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202403272211525_Artur.resx">
-      <DependentUpon>202403272211525_Artur.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202404151458017_initial.resx">
+      <DependentUpon>202404151458017_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404151526511_auth.resx">
+      <DependentUpon>202404151526511_auth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
