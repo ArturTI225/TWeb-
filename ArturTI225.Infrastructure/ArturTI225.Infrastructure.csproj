@@ -55,6 +55,10 @@
     <Compile Include="Migrations\202404151526511_auth.Designer.cs">
       <DependentUpon>202404151526511_auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404221701489_adminpanel.cs" />
+    <Compile Include="Migrations\202404221701489_adminpanel.Designer.cs">
+      <DependentUpon>202404221701489_adminpanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404151526511_auth.resx">
       <DependentUpon>202404151526511_auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404221701489_adminpanel.resx">
+      <DependentUpon>202404221701489_adminpanel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
