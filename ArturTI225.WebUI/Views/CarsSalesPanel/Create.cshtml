@@ -1,0 +1,40 @@
+﻿@model ArturTI225.Domain.Entities.Order
+
+@{
+    ViewBag.Title = "Admin panel";
+    Layout = "../Shared/_CarsSalesLayout.cshtml";
+}
+
+<h2>Create New Order</h2>
+
+@using (Html.BeginForm()) {
+@Html.AntiForgeryToken()
+
+<div class="form-group">
+    @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.CarId, "Car")
+    @Html.DropDownList("CarId", null, htmlAttributes: new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.CarId, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+    @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.TotalPrice, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.TotalPrice, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.TotalPrice, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Create" class="btn btn-success" />
+</div>
+}
