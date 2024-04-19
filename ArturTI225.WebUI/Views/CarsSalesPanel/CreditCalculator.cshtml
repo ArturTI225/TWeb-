@@ -1,0 +1,23 @@
+﻿@model ArturTI225.Domain.Entities.Order
+@{
+    Layout = "../Shared/_CarsSalesLayout.cshtml";
+}
+
+<h2>Credit Calculator for Order #@Model.Id</h2>
+<p>Calculate the monthly payments for the car purchased in this order.</p>
+
+<form action="@Url.Action("DownloadCreditDetails", "CarsSalesPanel", new { id = Model.Id })" method="post">
+    <div class="form-group">
+        <label>Loan Amount</label>
+        <input type="number" class="form-control" value="@Model.TotalPrice" readonly />
+    </div>
+    <div class="form-group">
+        <label>Interest Rate (%)</label>
+        <input type="number" name="interestRate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Loan Term (years)</label>
+        <input type="number" name="loanTerm" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Download Payment Schedule</button>
+</form>
