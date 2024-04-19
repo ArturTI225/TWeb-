@@ -25,11 +25,18 @@ namespace ArturTI225.WebUI
             HttpCookie authCookie = Context.Request.Cookies[FormsAuthentication.FormsCookieName];
             if (authCookie != null)
             {
-                FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
-                if (authTicket != null && !authTicket.Expired)
+                try
                 {
-                    var roles = authTicket.UserData.Split(',');
-                    HttpContext.Current.User = new GenericPrincipal(new FormsIdentity(authTicket), roles);
+                    FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+                    if (authTicket != null && !authTicket.Expired)
+                    {
+                        var roles = authTicket.UserData.Split(',');
+                        HttpContext.Current.User = new GenericPrincipal(new FormsIdentity(authTicket), roles);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    FormsAuthentication.SignOut();
                 }
             }
         }
