@@ -1,0 +1,18 @@
+﻿@model ArturTI225.Domain.Entities.Order
+@{
+    ViewBag.Title = "Admin panel";
+    Layout = "../Shared/_CarsSalesLayout.cshtml";
+}
+
+<h2>Order Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Order #@Model.Id</h4>
+        <p class="card-text">Customer ID: @Model.UserId</p>
+        <p class="card-text">Car ID: @Model.CarId</p>
+        <p class="card-text">Order Date: @Model.OrderDate.ToString("yyyy-MM-dd")</p>
+        <p class="card-text">Total Price: $@Model.TotalPrice.ToString("N2")</p>
+        <a href="@Url.Action("Index")" class="btn btn-primary">Back to List</a>
+    </div>
+</div>

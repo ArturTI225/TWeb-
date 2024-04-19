@@ -1,0 +1,34 @@
+﻿@model ArturTI225.Domain.Entities.Order
+@{
+    ViewBag.Title = "Admin panel";
+    Layout = "../Shared/_CarsSalesLayout.cshtml";
+}
+
+<h2>Edit Order</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Id)
+
+    <!-- Поля аналогичны Create.cshtml, но добавляем значение Model к каждому полю -->
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CarId, "Car")
+        @Html.DropDownList("CarId", null, Model.CarId.ToString(), new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CarId, "", new { @class = "text-danger" })
+    </div>
+
+    <!-- Другие поля здесь -->
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-success" />
+        <a href="@Url.Action("Index")" class="btn btn-default">Cancel</a>
+    </div>
+}
